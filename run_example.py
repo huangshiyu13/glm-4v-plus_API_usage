@@ -1,10 +1,3 @@
-如何使用 GLM-4V-Plus API。
-
-首先在 https://bigmodel.cn/usercenter/apikeys 申请一个API Key。
-
-## Example
-
-```python
 import base64
 
 from zhipuai import ZhipuAI
@@ -20,7 +13,8 @@ api_key="None" # 填写您自己的APIKey
 if api_key == "None":
     print("请在代码中填写您的APIKey")
     exit(1)
-client = ZhipuAI(api_key=api_key)  
+
+client = ZhipuAI(api_key=api_key)
 
 history = []
 for question in question_list:
@@ -103,10 +97,3 @@ for question in question_list:
         final_text = response.choices[0].message.content
         print("AI:", final_text)
     history.append((question, final_text))
-```
-
-or 
-
-```shell
-python run_example.py
-```
