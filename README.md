@@ -2,6 +2,13 @@
 
 首先在 https://bigmodel.cn/usercenter/apikeys 申请一个API Key。
 
+## Install
+
+```bash
+pip install -r requirements.txt
+```
+
+
 ## Example
 
 ```python
