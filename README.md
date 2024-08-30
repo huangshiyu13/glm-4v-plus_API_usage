@@ -17,7 +17,8 @@ import base64
 from zhipuai import ZhipuAI
 
 video_path = "test_video.mp4"
-question_list = ["请仔细描述一下这个视频"]
+# 支持多轮对话
+question_list = ["你是谁","请仔细描述一下这个视频"]
 
 stream_output = True
 with open(video_path, 'rb') as video_file:
