@@ -2,15 +2,16 @@ import base64
 
 from zhipuai import ZhipuAI
 
-video_path = "test_video.mp4"
+video_path = "elephant.mp4"
 # 支持多轮对话
-question_list = ["你是谁","请仔细描述一下这个视频"]
+question_list = ["你是谁", "请仔细描述一下这个视频"]
+
 
 stream_output = True
 with open(video_path, 'rb') as video_file:
     video_url = base64.b64encode(video_file.read()).decode('utf-8')
 
-api_key="None" # 填写您自己的APIKey
+api_key = "None"  # 填写您自己的APIKey
 if api_key == "None":
     print("请在代码中填写您的APIKey")
     exit(1)
@@ -25,7 +26,6 @@ for question in question_list:
             {
                 "role": "user",
                 "content": [
-
                     {
                         "type": "video_url",
                         "video_url": {
@@ -36,7 +36,6 @@ for question in question_list:
                         "type": "text",
                         "text": question
                     },
-
                 ]
             }
         ]
